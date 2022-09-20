@@ -7,17 +7,21 @@ import { InjectRepository } from '@nestjs/typeorm';
 
 @Injectable()
 export class MapService {
-  // create(createMapDto: CreateMapDto) {
-  //   return 'This action adds a new map';
   constructor(
     @InjectRepository(map)
     private readonly MapRepository: Repository<map>,
-  ) { }
+  ) {}
+
+  create(createMapDto: CreateMapDto) {
+    return this.MapRepository.save(createMapDto);
+  }
   // }
 
   findAll(): Promise<map[]> {
     return this.MapRepository.find();
   }
+
+  
 
   // findOne(id: number) {
   //   return `This action returns a #${id} map`;
