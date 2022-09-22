@@ -102,10 +102,10 @@ export class MapController {
       };
 
       const loadData = {
-        id: parsedCsv.data[0].id,
-        lat: parsedCsv.data[0].lat,
-        lon: parsedCsv.data[0].lon,
-        cityName: parsedCsv.data[0].city_name,
+        id: element.id,
+        lat: element.lat,
+        lon: element.lon,
+        cityName: element.city_name,
         location: point,
       };
 
